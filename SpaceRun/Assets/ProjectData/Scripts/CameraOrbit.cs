@@ -121,13 +121,11 @@ namespace Mechanics
 
         private bool ManualRotation(ref Vector2 orbitAngles)
         {
-            Vector2 input = new Vector2(-Input.GetAxis("Mouse Y"),
-            Input.GetAxis("Mouse X"));
+            Vector2 input = new Vector2(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"));
             float e = Mathf.Epsilon;
             if (input.x < -e || input.x > e || input.y < -e || input.y > e)
             {
-                orbitAngles += _rotationSpeed * Time.unscaledDeltaTime * input *
-                _sensitive;
+                orbitAngles += _rotationSpeed * Time.unscaledDeltaTime * input * _sensitive;
                 return true;
             }
             return false;
